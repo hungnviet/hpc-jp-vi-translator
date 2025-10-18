@@ -59,7 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Request translation using GPT‑4o; adjust max_tokens and temperature as needed.
     const translationResponse = await openai.chat.completions.create({
       model: 'gpt-4o',
-      messages,
+      messages: messages as any,
       max_tokens: 2048,
       temperature: 0.2,
     });
